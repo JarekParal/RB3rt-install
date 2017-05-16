@@ -17,10 +17,15 @@ set "origin=%2%"
 
 @xcopy /y/q %origin%\* C:\RB3rt\sdk\workspace\project
 
+@IF "%1"=="-m" GOTO MAKE
+
 @c:\cygwin64\bin\bash.exe -l -c " pwd ; cd /cygdrive/c/RB3rt/sdk/workspace ; pwd ; make app=project"
 xcopy /y C:\RB3rt\sdk\workspace\app %origin%\.
 
-@IF "%1"=="-m" GOTO UPLOAD
+@GOTO END
+
+:MAKE
+@c:\cygwin64\bin\bash.exe -l -c " pwd ; cd /cygdrive/c/RB3rt/sdk/workspace ; pwd ; make app=project && make upload"
 @GOTO END
 
 
