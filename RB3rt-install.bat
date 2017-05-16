@@ -17,7 +17,7 @@ set "vscode=C:\Program Files (x86)\Microsoft VS Code\bin\code"
 "%vscode%" --install-extension ms-vscode.cpptools
 
 %wget% https://cygwin.com/setup-x86_64.exe -O cygwin.exe
-cygwin.exe -q -s ftp://ftp-stud.hs-esslingen.de/pub/Mirrors/sources.redhat.com/cygwin/ -P make diffutils-3.5-2 perl git gcc-core gcc-g++ libboost-devel curl 
+cygwin.exe -q -s http://www.gutscheinrausch.de/mirror/cygwin/ -P make diffutils-3.5-2 perl git gcc-core gcc-g++ libboost-devel curl 
 
 wget https://launchpad.net/gcc-arm-embedded/5.0/5-2016-q3-update/+download/gcc-arm-none-eabi-5_4-2016q3-20160926-win32.exe -O toolchain.exe
 toolchain.exe /S
@@ -26,7 +26,9 @@ wget https://bitbucket.org/Tasssadar/lorris_binaries/raw/b482b371fe2e08a28c11445
 "%unzip%" x Lorris.zip -oC:\Lorris
 
 wget http://files.robotikabrno.cz/RB3rt.zip
-"%unzip%" x RB3rt.zip -oC:\RB3rt
+"%unzip%" x RB3rt.zip -oC:\
+
+xcopy /y Make.bat C:\RB3rt\
 
 cd %origin%
 @RD /S /Q %tmp%
