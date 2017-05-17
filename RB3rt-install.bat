@@ -28,5 +28,12 @@ wget https://bitbucket.org/Tasssadar/lorris_binaries/raw/b482b371fe2e08a28c11445
 wget http://files.robotikabrno.cz/RB3rt.zip
 "%unzip%" x RB3rt.zip -oC:\
 
+wget http://files.robotikabrno.cz/RB3rt-project.zip
+"%unzip%" x RB3rt-project.zip -oC:\
+
+wget http://files.robotikabrno.cz/RB3rt-image.zip
+"%unzip%" x RB3rt-image.zip -oC:\
+
+
 cd %origin%
 @RD /S /Q %tmp%
