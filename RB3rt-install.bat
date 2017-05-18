@@ -1,6 +1,6 @@
 set "origin=%cd%"
 
-set "tmp=temp-rb3rt-install"
+set "tmp=%Temp%\rb3rt-install"
 if not exist "%tmp%" mkdir %tmp%"
 cd %tmp%
 
@@ -14,7 +14,7 @@ set "unzip=C:\Program Files\7-Zip\7z"
 %wget% https://go.microsoft.com/fwlink/?LinkID=623230 -O vscode.exe
 vscode.exe /SILENT
 set "vscode=C:\Program Files (x86)\Microsoft VS Code\bin\code"
-cmd /d "%vscode%" --install-extension ms-vscode.cpptools
+cmd /c "%vscode%" --install-extension ms-vscode.cpptools
 
 %wget% https://cygwin.com/setup-x86_64.exe -O cygwin.exe
 cygwin.exe -q -s http://www.gutscheinrausch.de/mirror/cygwin/ -P make,diffutils-3.5-2,perl,git,gcc-core,gcc-g++,libboost-devel,curl 
