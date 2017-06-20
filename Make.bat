@@ -13,9 +13,9 @@ echo %1
 set "origin=%2%"
 
 @del /q C:\RB3rt\sdk\workspace\app
-@del /q C:\RB3rt\sdk\workspace\project\*
+@del /s/q C:\RB3rt\sdk\workspace\project\*
 
-@xcopy /y/q %origin%\* C:\RB3rt\sdk\workspace\project
+@xcopy /s/y/q %origin%\* C:\RB3rt\sdk\workspace\project
 
 @IF "%1"=="-m" GOTO MAKE
 
