@@ -5,7 +5,7 @@ if not exist "%tmp%" mkdir %tmp%"
 cd %tmp%
 
 set "wget=%tmp%\wget.exe"
-bitsadmin.exe /transfer "Downloading wget" https://eternallybored.org/misc/wget/current/wget64.exe %wget%
+bitsadmin.exe /transfer "Downloading wget" https://eternallybored.org/misc/wget/current/wget.exe %wget%
 
 %wget% http://www.7-zip.org/a/7z1604-x64.exe -O 7z-setup.exe
 7z-setup.exe /S
