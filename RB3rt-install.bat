@@ -1,3 +1,7 @@
+:: RB3rt-install.bat
+:: Author: Jaroslav Páral (jarekparal) 
+:: Version: 1.1 (2019-07-02)
+
 set "origin=%cd%"
 
 set "tmp=%Temp%\rb3rt-install"
@@ -19,19 +23,19 @@ cmd /c "%vscode%" --install-extension ms-vscode.cpptools
 %wget% https://cygwin.com/setup-x86_64.exe -O cygwin.exe
 cygwin.exe -q -s http://www.gutscheinrausch.de/mirror/cygwin/ -P make,diffutils-3.5-2,perl,git,gcc-core,gcc-g++,libboost-devel,curl 
 
-wget https://launchpad.net/gcc-arm-embedded/5.0/5-2016-q3-update/+download/gcc-arm-none-eabi-5_4-2016q3-20160926-win32.exe -O gcc-arm-none-eabi-toolchain.exe
+%wget% https://launchpad.net/gcc-arm-embedded/5.0/5-2016-q3-update/+download/gcc-arm-none-eabi-5_4-2016q3-20160926-win32.exe -O gcc-arm-none-eabi-toolchain.exe
 gcc-arm-none-eabi-toolchain.exe 
 
-wget https://bitbucket.org/Tasssadar/lorris_binaries/raw/b482b371fe2e08a28c1144563cde06558586bf66/Lorris.zip -O Lorris.zip
+%wget% https://tasemnice.eu/lorris/Lorris.zip -O Lorris.zip
 "%unzip%" x -aoa Lorris.zip -oC:\Lorris
 
-wget http://files.robotikabrno.cz/RB3rt.zip
+%wget% http://files.robotikabrno.cz/RB3rt.zip
 "%unzip%" x -aoa RB3rt.zip -oC:\
 
-wget http://files.robotikabrno.cz/RB3rt-project.zip
+%wget% http://files.robotikabrno.cz/RB3rt-project.zip
 "%unzip%" x -aoa RB3rt-project.zip -oC:\
 
-wget http://files.robotikabrno.cz/RB3rt-image.zip
+%wget% http://files.robotikabrno.cz/RB3rt-image.zip
 "%unzip%" x -aoa RB3rt-image.zip -oC:\
 
 
